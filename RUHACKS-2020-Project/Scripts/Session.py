@@ -29,6 +29,7 @@ class Session:
     def checkProductivity(self, isProductive):
         # called with whether current active tab is productive or not
         # called every time active tab switches
+        # FARIS -
         if isProductive:
             self.beingProductive = True
         else:
@@ -47,7 +48,7 @@ class Session:
             csv_writer = csv.writer()
             csv_writer.writerow(self.name, self.timeStarted, self.timeEnded, self.secondsProductive, self.secondsLazy, len(self.newWebsites))
 
-    def addNewWebsite(self, website):
+    def addNewWebsite(self, website, isProductive):
         #stub
 
 
