@@ -55,10 +55,11 @@ class StartPage(tk.Frame):
 
         button2.place(relx=0.5, rely=0.75, anchor=tk.CENTER)
 
+class profile(tk.Frame):
+    def __init__(self, e):
+        self.name = e
 
 class PageOne(tk.Frame):
-
-    
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -78,6 +79,7 @@ class PageOne(tk.Frame):
 
         self.b = tk.Button(self, text='Submit', command=self.writeToFile)
         self.b.place(relx=0.7,rely=0.4, anchor=tk.CENTER)
+        p = profile(self.e.get())
 
     def writeToFile(self):
         with open('profiles.csv', 'a') as f:
